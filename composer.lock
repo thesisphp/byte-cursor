@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d2c8defe278d6192d92bf55a292fdfd",
+    "content-hash": "7969dabdad852c83b201019f241fbba6",
     "packages": [
         {
             "name": "thesis/byte-order",
-            "version": "0.1.x-dev",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thesisphp/byte-order.git",
                 "reference": "be7702e584dbaf1d3fe800e4fcde9d006bd7dbdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thesisphp/byte-order/zipball/be7702e584dbaf1d3fe800e4fcde9d006bd7dbdb",
+                "reference": "be7702e584dbaf1d3fe800e4fcde9d006bd7dbdb",
+                "shasum": ""
             },
             "require": {
                 "php": "^8.3",
@@ -24,7 +30,6 @@
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "ergebnis/composer-normalize": "^2.45.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -38,39 +43,7 @@
                     "Thesis\\ByteOrder\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Thesis\\ByteOrder\\": "tests/"
-                }
-            },
-            "scripts": {
-                "check": [
-                    "@composer fixcs -- --dry-run",
-                    "@phpstan",
-                    "@composer validate",
-                    "@composer normalize --dry-run",
-                    "@check-require",
-                    "@check-unused"
-                ],
-                "check-require": [
-                    "tools/composer-require-checker/vendor/bin/composer-require-checker"
-                ],
-                "check-unused": [
-                    "tools/composer-unused/vendor/bin/composer-unused"
-                ],
-                "fixcs": [
-                    "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --diff --verbose"
-                ],
-                "infection": [
-                    "tools/infection/vendor/bin/infection --show-mutations"
-                ],
-                "phpstan": [
-                    "tools/phpstan/vendor/bin/phpstan analyze"
-                ],
-                "pre-command-run": [
-                    "mkdir -p var"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -89,6 +62,16 @@
                 }
             ],
             "description": "The library adds methods for reading bytes in any byte order to Reader and Writer.",
+            "support": {
+                "issues": "https://github.com/thesisphp/byte-order/issues",
+                "source": "https://github.com/thesisphp/byte-order/tree/0.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.tinkoff.ru/cf/5MqZQas2dk7",
+                    "type": "custom"
+                }
+            ],
             "time": "2025-01-17T03:50:12+00:00"
         },
         {
@@ -223,7 +206,7 @@
         },
         {
             "name": "thesis/endian",
-            "version": "0.1.x-dev",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thesisphp/endian.git",
@@ -243,7 +226,6 @@
                 "ergebnis/composer-normalize": "^2.45.0",
                 "phpunit/phpunit": "^10.5.40"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -1672,16 +1654,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.40",
+            "version": "10.5.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e6ddda95af52f69c1e0c7b4f977cccb58048798c"
+                "reference": "e76586fa3d49714f230221734b44892e384109d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e6ddda95af52f69c1e0c7b4f977cccb58048798c",
-                "reference": "e6ddda95af52f69c1e0c7b4f977cccb58048798c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e76586fa3d49714f230221734b44892e384109d7",
+                "reference": "e76586fa3d49714f230221734b44892e384109d7",
                 "shasum": ""
             },
             "require": {
@@ -1753,7 +1735,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.40"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.41"
             },
             "funding": [
                 {
@@ -1769,7 +1751,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-21T05:49:06+00:00"
+            "time": "2025-01-13T09:33:05+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2902,10 +2884,8 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "thesis/byte-order": 20
-    },
+    "minimum-stability": "stable",
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
