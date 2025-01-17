@@ -1,5 +1,5 @@
 {
-    "name": "thesis/cursor",
+    "name": "thesis/byte-cursor",
     "description": "In-memory buffer for read/write capabilities.",
     "license": "MIT",
     "type": "library",
@@ -33,12 +33,12 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Thesis\\Cursor\\": "src/"
+            "Thesis\\ByteCursor\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Thesis\\Cursor\\": "tests/"
+            "Thesis\\ByteCursor\\": "tests/"
         }
     },
     "config": {

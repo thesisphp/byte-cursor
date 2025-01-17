@@ -1,9 +1,9 @@
-# Cursor
+# Byte Cursor
 
 ## Installation
 
 ```shell
-composer require thesis/cursor
+composer require thesis/byte-cursor
 ```
 
 ## Basic usage
@@ -13,8 +13,8 @@ composer require thesis/cursor
 
 declare(strict_types=1);
 
-use Thesis\Cursor\Cursor;
-use Thesis\Cursor\Seek;
+use Thesis\ByteCursor\Cursor;
+use Thesis\ByteCursor\Seek;
 
 require_once __DIR__.'/vendor/autoload.php';
 

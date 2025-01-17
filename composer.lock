@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7969dabdad852c83b201019f241fbba6",
+    "content-hash": "f9c260ab3b9f874b72a14f3014c7d3b2",
     "packages": [
         {
             "name": "thesis/byte-order",

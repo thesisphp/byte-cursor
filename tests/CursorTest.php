@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Thesis\Cursor;
+namespace Thesis\ByteCursor;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
