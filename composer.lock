@@ -4,8 +4,294 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85c8a7ce2944fb35bfc881426dd57273",
-    "packages": [],
+    "content-hash": "2d2c8defe278d6192d92bf55a292fdfd",
+    "packages": [
+        {
+            "name": "thesis/byte-order",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thesisphp/byte-order.git",
+                "reference": "be7702e584dbaf1d3fe800e4fcde9d006bd7dbdb"
+            },
+            "require": {
+                "php": "^8.3",
+                "thesis/byte-reader": "^0.3.1",
+                "thesis/byte-writer": "^0.2.1",
+                "thesis/endian": "^0.1.0"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "ergebnis/composer-normalize": "^2.45.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true,
+                    "target-directory": "tools"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Thesis\\ByteOrder\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Thesis\\ByteOrder\\": "tests/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@composer fixcs -- --dry-run",
+                    "@phpstan",
+                    "@composer validate",
+                    "@composer normalize --dry-run",
+                    "@check-require",
+                    "@check-unused"
+                ],
+                "check-require": [
+                    "tools/composer-require-checker/vendor/bin/composer-require-checker"
+                ],
+                "check-unused": [
+                    "tools/composer-unused/vendor/bin/composer-unused"
+                ],
+                "fixcs": [
+                    "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --diff --verbose"
+                ],
+                "infection": [
+                    "tools/infection/vendor/bin/infection --show-mutations"
+                ],
+                "phpstan": [
+                    "tools/phpstan/vendor/bin/phpstan analyze"
+                ],
+                "pre-command-run": [
+                    "mkdir -p var"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valentin Udaltsov",
+                    "email": "udaltsov.valentin@gmail.com"
+                },
+                {
+                    "name": "kafkiansky",
+                    "email": "vadimzanfir@gmail.com"
+                },
+                {
+                    "name": "Thesis Team",
+                    "homepage": "https://github.com/orgs/thesisphp/people"
+                }
+            ],
+            "description": "The library adds methods for reading bytes in any byte order to Reader and Writer.",
+            "time": "2025-01-17T03:50:12+00:00"
+        },
+        {
+            "name": "thesis/byte-reader",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thesisphp/byte-reader.git",
+                "reference": "95bf6b52017726a98d348919f60795d656690ee9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thesisphp/byte-reader/zipball/95bf6b52017726a98d348919f60795d656690ee9",
+                "reference": "95bf6b52017726a98d348919f60795d656690ee9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "ergebnis/composer-normalize": "^2.45.0"
+            },
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true,
+                    "target-directory": "tools"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Thesis\\ByteReader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valentin Udaltsov",
+                    "email": "udaltsov.valentin@gmail.com"
+                },
+                {
+                    "name": "kafkiansky",
+                    "email": "vadimzanfir@gmail.com"
+                },
+                {
+                    "name": "Thesis Team",
+                    "homepage": "https://github.com/orgs/thesisphp/people"
+                }
+            ],
+            "description": "Reader abstraction for I/O.",
+            "support": {
+                "issues": "https://github.com/thesisphp/byte-reader/issues",
+                "source": "https://github.com/thesisphp/byte-reader/tree/0.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.tinkoff.ru/cf/5MqZQas2dk7",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-01-16T15:56:41+00:00"
+        },
+        {
+            "name": "thesis/byte-writer",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thesisphp/byte-writer.git",
+                "reference": "bebd8f9fb15edc1c1b4c064a47c7d00674d16440"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thesisphp/byte-writer/zipball/bebd8f9fb15edc1c1b4c064a47c7d00674d16440",
+                "reference": "bebd8f9fb15edc1c1b4c064a47c7d00674d16440",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "ergebnis/composer-normalize": "^2.45.0"
+            },
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true,
+                    "target-directory": "tools"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Thesis\\ByteWriter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valentin Udaltsov",
+                    "email": "udaltsov.valentin@gmail.com"
+                },
+                {
+                    "name": "kafkiansky",
+                    "email": "vadimzanfir@gmail.com"
+                },
+                {
+                    "name": "Thesis Team",
+                    "homepage": "https://github.com/orgs/thesisphp/people"
+                }
+            ],
+            "description": "Writer abstraction for I/O.",
+            "support": {
+                "issues": "https://github.com/thesisphp/byte-writer/issues",
+                "source": "https://github.com/thesisphp/byte-writer/tree/0.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.tinkoff.ru/cf/5MqZQas2dk7",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-01-16T15:59:31+00:00"
+        },
+        {
+            "name": "thesis/endian",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thesisphp/endian.git",
+                "reference": "a7d22f427dec33eae32383bbe63f379d1c1db64f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thesisphp/endian/zipball/a7d22f427dec33eae32383bbe63f379d1c1db64f",
+                "reference": "a7d22f427dec33eae32383bbe63f379d1c1db64f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "ergebnis/composer-normalize": "^2.45.0",
+                "phpunit/phpunit": "^10.5.40"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": false,
+                    "forward-command": true,
+                    "target-directory": "tools"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Internal/functions.php"
+                ],
+                "psr-4": {
+                    "Thesis\\Endian\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valentin Udaltsov",
+                    "email": "udaltsov.valentin@gmail.com"
+                },
+                {
+                    "name": "kafkiansky",
+                    "email": "vadimzanfir@gmail.com"
+                },
+                {
+                    "name": "Thesis Team",
+                    "homepage": "https://github.com/orgs/thesisphp/people"
+                }
+            ],
+            "description": "Library for encoding and decoding numbers in either big-endian or little-endian order.",
+            "support": {
+                "issues": "https://github.com/thesisphp/endian/issues",
+                "source": "https://github.com/thesisphp/endian/tree/0.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.tinkoff.ru/cf/5MqZQas2dk7",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-01-15T04:45:11+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "bamarni/composer-bin-plugin",
@@ -2616,14 +2902,16 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "thesis/byte-order": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.3"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.3"
     },
