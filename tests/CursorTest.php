@@ -59,4 +59,15 @@ final class CursorTest extends TestCase
         self::assertCount(0, $cursor);
         self::assertSame(0, $cursor->position());
     }
+
+    public function testAmend(): void
+    {
+        $cursor = Cursor::empty();
+        $cursor->write('before compression');
+        $cursor->seek(Seek::start(0));
+        $cursor->amend(static fn(string $v): string => 'aftrcompr');
+        $cursor->write('xyz');
+        self::assertSame(\count($cursor), $cursor->position());
+        self::assertSame('aftrcomprxyz', $cursor->reset());
+    }
 }

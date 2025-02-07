@@ -213,6 +213,28 @@ final class Cursor implements
     }
 
     /**
+     * @param callable(non-empty-string): non-empty-string $fix
+     * @param ?positive-int $len
+     */
+    public function amend(callable $fix, ?int $len = null): void
+    {
+        $len ??= \strlen($this->buffer);
+        if ($len > \strlen($this->buffer)) {
+            throw new \UnexpectedValueException(\sprintf('Len of amend "%d" is longer than available buffer.', $len));
+        }
+
+        $v = substr($this->buffer, $this->position, $len);
+        if ($v !== '') {
+            $v = $fix($v);
+
+            $this->buffer = substr($this->buffer, 0, $this->position);
+            $this->buffer .= $v;
+            $this->buffer .= substr($this->buffer, $this->position + \strlen($v), \strlen($this->buffer));
+            $this->position = \strlen($this->buffer);
+        }
+    }
+
+    /**
      * @return non-negative-int
      */
     public function position(): int

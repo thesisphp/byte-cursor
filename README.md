@@ -67,3 +67,23 @@ var_dump($items); // [x, y]
 $cursor->reset(); // by resetting it.
 $cursor->seek(Seek::start(0)); // or seeking.
 ```
+
+### Amend
+
+Useful for operations such as compression to avoid creating a new buffer.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Thesis\ByteCursor\Cursor;
+use Thesis\ByteCursor\Seek;
+
+$cursor = Cursor::empty();
+$cursor->write('secret');
+$cursor->seek(Seek::start(0));
+$cursor->amend(snappy_compress(...)); // no need to seek, amend automatically moves the cursor to the end
+```
